@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>قصة</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Tajawal", sans-serif;
+        background: url('https://ik.imagekit.io/87coavrli/WhatsApp%20Image%202025-12-05%20at%202.59.23%20AM%20background.jpeg') no-repeat center center/cover;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 50px;
+        scroll-behavior: smooth;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 600px;
+        text-align: center;
+    }
+
+    .box {
+        background: rgba(255, 255, 255, 0.18);
+        padding: 25px 35px;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 25px rgba(0,0,0,0.15);
+        backdrop-filter: blur(6px);
+        margin-bottom: 20px;
+    }
+
+    .text {
+        font-size: 20px;
+        color: #fff;
+        line-height: 1.8;
+        font-weight: 500;
+        text-shadow: 0 0 8px rgba(0,0,0,0.4);
+        white-space: pre-wrap;
+        text-align: center;
+    }
+
+    .btn {
+        background: rgba(255,255,255,0.25);
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        background: rgba(255,255,255,0.4);
+        transform: scale(1.05);
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .media-item {
+        width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+        margin: 15px 0;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease;
+        border-radius: 15px;
+    }
+
+    .media-item.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    video.media-item {
+        width: 100%;
+        max-height: 250px;
+        border-radius: 15px;
+    }
+</style>
+</head>
+<body>
+    <audio id="bgAudio" loop>
+    <source src="https://ik.imagekit.io/87coavrli/project%20backg/Albumaty.Com_tww_lyt_hbyby_dh_.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const audio = document.getElementById('bgAudio');
+document.body.addEventListener('click', function playAudio() {
+    audio.play();
+    document.body.removeEventListener('click', playAudio);
+});
+</script>
+
+    <div class="container">
+        <div class="box">
+            <button class="btn" id="toggleTextBtn">Text</button>
+            <div class="text hidden" id="loveText">
+بحبك يا أم فارس، انتي حياتي والله وأحسن حاجة حصلت لي في السنة دي. انتي مراتي وأم عيالي وجماعتي بموت فيكي والله ومفيش حاجة تقدر تخليني أبعد عنك.
+            </div>
+        </div>
+
+        <div class="box" id="mediaBox">
+            <button class="btn" id="toggleMediaBtn">Photo</button>
+            <div id="mediaContent" class="hidden">
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.05%20AM%20q.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.05%20AM%20u.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%203.36.21%20PM%20v.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.58.33%20AM%20messege.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.04%20AM%20a.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%204.00.06%20PM%20mgf.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.04%20AM%20n.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.03%20AM%20%D8%A7.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.03%20AM%20l.jpeg" class="media-item" />
+                <img src="https://ik.imagekit.io/87coavrli/project%20img/WhatsApp%20Image%202025-12-05%20at%202.59.03%20AM.jpeg" class="media-item" />
+            </div>
+        </div>
+
+        <div class="box" id="videoBox">
+            <button class="btn" id="toggleVideoBtn">Video</button>
+            <div id="videoContent" class="hidden">
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.03%20AM.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.03%20AM%20n.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.03%20AM%20m.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.04%20AM%20f.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.03%20AM%20l.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.04%20AM%20k.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.04%20AM%20p.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.04%20AM%20d.mp4" type="video/mp4">
+                </video>
+                <video class="media-item" controls>
+                    <source src="https://ik.imagekit.io/87coavrli/project/WhatsApp%20Video%202025-12-05%20at%202.59.02%20AM.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+    </div>
+
+<script>
+    const toggleTextBtn = document.getElementById('toggleTextBtn');
+    const loveText = document.getElementById('loveText');
+
+    toggleTextBtn.addEventListener('click', () => {
+        loveText.classList.toggle('hidden');
+        if(!loveText.classList.contains('hidden')) {
+            loveText.style.animation = 'fadeIn 0.8s ease';
+        }
+    });
+
+    const toggleMediaBtn = document.getElementById('toggleMediaBtn');
+    const mediaContent = document.getElementById('mediaContent');
+
+    toggleMediaBtn.addEventListener('click', () => {
+        if(mediaContent.classList.contains('hidden')) {
+            mediaContent.classList.remove('hidden');
+            const items = mediaContent.querySelectorAll('.media-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('show');
+                }, index * 200);
+            });
+        } else {
+            const items = mediaContent.querySelectorAll('.media-item');
+            items.forEach(item => item.classList.remove('show'));
+            setTimeout(() => mediaContent.classList.add('hidden'), 800);
+        }
+    });
+
+    const toggleVideoBtn = document.getElementById('toggleVideoBtn');
+    const videoContent = document.getElementById('videoContent');
+
+    toggleVideoBtn.addEventListener('click', () => {
+        if(videoContent.classList.contains('hidden')) {
+            videoContent.classList.remove('hidden');
+            const items = videoContent.querySelectorAll('.media-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('show');
+                }, index * 200);
+            });
+        } else {
+            const items = videoContent.querySelectorAll('.media-item');
+            items.forEach(item => item.classList.remove('show'));
+            setTimeout(() => videoContent.classList.add('hidden'), 800);
+        }
+    });
+</script>
+</body>
+</html>
